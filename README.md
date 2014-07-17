@@ -66,12 +66,12 @@ var config = {
 };
 ```
 
-### IP-Filter
+### IP-Filter middleware
 
 _(Coming soon)_
 
 
-### HTTP-Header-Filter
+### HTTP-Header-Filter middleware
 
 _(Coming soon)_
 
