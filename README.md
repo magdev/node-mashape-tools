@@ -45,4 +45,4 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## License
 
 Copyright (c) 2014 Marco Grätsch  
-Licensed under the MIT license.
+Licensed under the [MIT license](LICENSE.md).
