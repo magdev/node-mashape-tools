@@ -21,7 +21,9 @@
     "keywords":[
         "mashape",
         "api",
-        "toolbox"
+        "toolbox",
+        "express",
+        "connect"
     ],
     "dependencies":{
         "ipfilter":"*",
