@@ -32,9 +32,49 @@ app.use(mashape.headerFilter({
 // ...
 ```
 
+
 ## Documentation
 
+### Configuration
+
+The configuration object can be passed to all middlewares.
+
+```js
+var config = {
+    // Path to a JSON-File with allowed IP-Addresses
+    iplist: null,
+    
+    // Mashape Proxy-Secret
+    proxySecret: null,
+    
+    // HTTP-Status-Code to send on invalid requests
+    errorCode: 403,
+    
+    // HTTP-Status-Message to send on invalid requests
+    errorMessage: 'Forbidden',
+    
+    // Delegate error-handling to express if true, otherwise just log the errors
+    strict: true,
+    
+    // Enable logging
+    log: true,
+    
+    // List of additional header-checks
+    additionalHeaderChecks: [
+        { header: 'x-your-header', value: 'your-expected-value' }
+    ]
+};
+```
+
+### IP-Filter
+
 _(Coming soon)_
+
+
+### HTTP-Header-Filter
+
+_(Coming soon)_
+
 
 
 ## Contributing
