@@ -1,0 +1,42 @@
+{
+  "name":"mashape-tools",
+  "version":"0.0.1",
+  "main":"index.js",
+  "description":"Some helpers to work with Mashape-APIs",
+  "homepage":"https://github.com/magdev/node-mashape-tools",
+  "bugs":"https://github.com/magdev/node-mashape-tools/issues",
+  "author":{
+    "name":"Marco Grätsch",
+    "email":"magdev3.0@gmail.com",
+    "url":"https://plus.google.com/+MarcoGrätsch"
+  },
+  "repository":{
+    "type":"git",
+    "url":"https://github.com/magdev/node-mashape-tools"
+  },
+  "license":"MIT",
+  "files":[
+    "lib"
+  ],
+  "keywords":[
+    "node-mashape-tools",
+    "mashape",
+    "api",
+    "toolbox"
+  ],
+  "dependencies":{
+    "ipfilter":"*",
+    "xtend":"*"
+  },
+  "devDependencies":{
+    "grunt-contrib-jshint":"^0.10.0",
+    "grunt-contrib-nodeunit":"^0.3.3",
+    "grunt-contrib-watch":"^0.6.1",
+    "load-grunt-tasks":"^0.4.0",
+    "time-grunt":"^0.3.1",
+    "jshint-stylish":"^0.2.0"
+  },
+  "scripts":{
+    "test":"grunt"
+  }
+}
