@@ -18,7 +18,7 @@ var express = require('express'),
 
 // Enable IP-Filter
 app.use(mashape.ipFilter({
-    iplist: '/path/to/iplist.json'
+    iplist: '/path/to/iplist.json' // or an array of IPs
 }));
 
 // Enable Proxy-Secret-Filter
