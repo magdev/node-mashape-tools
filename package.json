@@ -26,15 +26,18 @@
         "connect"
     ],
     "dependencies":{
-        "ipfilter":"*",
         "xtend":"*"
     },
     "devDependencies":{
-        "grunt-contrib-jshint":"^0.10.0",
-        "grunt-contrib-watch":"^0.6.1",
-        "load-grunt-tasks":"^0.4.0",
-        "time-grunt":"^0.3.1",
-        "jshint-stylish":"^0.2.0"
+        "grunt-contrib-jshint":"*",
+        "grunt-contrib-watch":"*",
+        "load-grunt-tasks":"*",
+        "time-grunt":"*",
+        "jshint-stylish":"*",
+        "mocha":"*",
+        "supertest":"*",
+        "grunt-simple-mocha":"*",
+        "express":"3.*"
     },
     "scripts":{
         "test":"grunt"
