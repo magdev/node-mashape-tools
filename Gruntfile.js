@@ -29,9 +29,21 @@ module.exports = function(grunt) {
 				files : '<%= jshint.lib.src %>',
 				tasks : [ 'jshint:lib' ]
 			}
-		}
+		},
+        simplemocha: {
+            options: {
+                globals: ['expect'],
+                timeout: 3000,
+                ignoreLeaks: false,
+                ui: 'bdd',
+                reporter: 'tap'
+            },
+            all: { src: ['test/*_test.js'] }
+        }
 	});
+	
+    grunt.loadNpmTasks('grunt-simple-mocha');
 
 	// Default task.
-	grunt.registerTask('default', [ 'jshint' ]);
+	grunt.registerTask('default', [ 'jshint', 'simplemocha' ]);
 };
