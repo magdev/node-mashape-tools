@@ -8,26 +8,26 @@ module.exports = function(grunt) {
 
 	// Project configuration.
 	grunt.initConfig({
-		jshint : {
-			options : {
-				jshintrc : '.jshintrc',
-				reporter : require('jshint-stylish')
+		jshint: {
+			options: {
+				jshintrc: '.jshintrc',
+				reporter: require('jshint-stylish')
 			},
 			gruntfile : {
-				src : 'Gruntfile.js'
+				src: 'Gruntfile.js'
 			},
-			lib : {
-				src : [ 'lib/**/*.js' ]
+			lib: {
+				src: [ 'lib/**/*.js' ]
 			}
 		},
-		watch : {
-			gruntfile : {
-				files : '<%= jshint.gruntfile.src %>',
-				tasks : [ 'jshint:gruntfile' ]
+		watch: {
+			gruntfile: {
+				files: '<%= jshint.gruntfile.src %>',
+				tasks: [ 'jshint:gruntfile' ]
 			},
-			lib : {
-				files : '<%= jshint.lib.src %>',
-				tasks : [ 'jshint:lib' ]
+			lib: {
+				files: '<%= jshint.lib.src %>',
+				tasks: [ 'jshint:lib' ]
 			}
 		},
         simplemocha: {
@@ -38,7 +38,9 @@ module.exports = function(grunt) {
                 ui: 'bdd',
                 reporter: 'tap'
             },
-            all: { src: ['test/*_test.js'] }
+            all: { 
+                src: ['test/**/*_test.js'] 
+            }
         }
 	});
 	
