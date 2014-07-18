@@ -101,7 +101,7 @@ describe('headerFilter()', function() {
         
         request(app)
             .get('/')
-        	.set('x-test-header', 'exists')
+            .set('x-test-header', 'exists')
             .expect(200, done);
     });
     
@@ -122,7 +122,7 @@ describe('headerFilter()', function() {
         
         request(app)
             .get('/')
-        	.set('x-test-header', 'foobar')
+            .set('x-test-header', 'foobar')
             .expect(403, done);
     });
 });
