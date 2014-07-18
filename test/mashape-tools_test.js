@@ -1,6 +1,13 @@
 /**
- * New node file
+ * mashape-tools
+ * https://github.com/magdev/node-mashape-tools
+ *
+ * Copyright (c) 2014 Marco Grätsch
+ * Licensed under the MIT license.
  */
+
+'use strict';
+
 var request = require('supertest'), 
     express = require('express'),
     mashape = require('../');
