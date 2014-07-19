@@ -97,6 +97,49 @@ describe('ipFilter()', function() {
             .expect(403, done);
     });
     
+    
+    it('allow whitelisted ip', function(done) {
+        var app = express();
+        app.set('trust proxy', true);
+        
+        app.use(mashape.ipFilter({
+            iplist: allowedIps,
+            strict: false,
+            log: false,
+            whitelist: ['10.2.2.1']
+        }));
+        
+        app.get('/', function(req, res){
+            res.send(200);
+        });
+        
+        request(app)
+            .get('/')
+            .set('x-forwarded-for', '10.2.2.1')
+            .expect(200, done);
+    });
+    
+    it('deny non-whitelisted ip', function(done) {
+        var app = express();
+        app.set('trust proxy', true);
+        
+        app.use(mashape.ipFilter({
+            iplist: allowedIps,
+            strict: false,
+            log: false,
+            whitelist: ['10.2.2.1']
+        }));
+        
+        app.get('/', function(req, res){
+            res.send(200);
+        });
+        
+        request(app)
+            .get('/')
+            .set('x-forwarded-for', '10.2.2.2')
+            .expect(403, done);
+    });
+    
     it('allow valid proxy (single ip)', function(done) {
         var app = express();
         app.set('trust proxy', true);
