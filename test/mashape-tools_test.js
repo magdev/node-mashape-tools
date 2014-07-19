@@ -262,7 +262,7 @@ describe('headerFilter()', function() {
             proxySecret: 'test-secret',
             strict: false,
             log: false,
-            debug: true
+            debug: DEBUG
         }));
         
         app.get('/', function(req, res){
