@@ -84,9 +84,10 @@ describe('ipFilter()', function() {
     
     it('deny invalid ip', function(done) {
         var app = express();
+        app.set('trust proxy', true);
         
         app.use(mashape.ipFilter({
-            iplist: ['10.2.2.1'],
+            iplist: ['10.2.2.2'],
             strict: false,
             log: false,
             debug: DEBUG
@@ -98,6 +99,7 @@ describe('ipFilter()', function() {
         
         request(app)
             .get('/')
+            .set('x-forwarded-for', '10.2.2.1')
             .expect(403, done);
     });
     
@@ -260,7 +262,7 @@ describe('headerFilter()', function() {
             proxySecret: 'test-secret',
             strict: false,
             log: false,
-            debug: DEBUG
+            debug: true
         }));
         
         app.get('/', function(req, res){
