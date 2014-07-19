@@ -58,6 +58,9 @@ var config = {
     
     // Enable logging
     log: true,
+        
+    /** Enable debug-mode */
+    debug: false,
     
     // List of additional header-checks
     additionalHeaderChecks: [
