@@ -62,7 +62,10 @@ var config = {
     // List of additional header-checks
     additionalHeaderChecks: [
         { header: 'x-your-header', value: 'your-expected-value' }
-    ]
+    ],
+    
+    /** List of allowed IPs, i.e. load balancers, applies on all middlewares */
+    whitelist: []
 };
 ```
 
