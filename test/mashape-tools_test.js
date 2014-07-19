@@ -12,6 +12,8 @@ var request = require('supertest'),
     express = require('express'),
     mashape = require('../'),
     
+    DEBUG = false,
+    
     allowedIps = [
         '107.23.255.128',
         '107.23.255.129',
@@ -67,7 +69,8 @@ describe('ipFilter()', function() {
         app.use(mashape.ipFilter({
             iplist: ['127.0.0.1'],
             strict: false,
-            log: false
+            log: false,
+            debug: DEBUG
         }));
         
         app.get('/', function(req, res){
@@ -85,7 +88,8 @@ describe('ipFilter()', function() {
         app.use(mashape.ipFilter({
             iplist: ['10.2.2.1'],
             strict: false,
-            log: false
+            log: false,
+            debug: DEBUG
         }));
         
         app.get('/', function(req, res){
@@ -106,6 +110,7 @@ describe('ipFilter()', function() {
             iplist: allowedIps,
             strict: false,
             log: false,
+            debug: DEBUG,
             whitelist: ['10.2.2.1']
         }));
         
@@ -127,6 +132,7 @@ describe('ipFilter()', function() {
             iplist: allowedIps,
             strict: false,
             log: false,
+            debug: DEBUG,
             whitelist: ['10.2.2.1']
         }));
         
@@ -147,7 +153,8 @@ describe('ipFilter()', function() {
         app.use(mashape.ipFilter({
             iplist: allowedIps,
             strict: false,
-            log: false
+            log: false,
+            debug: DEBUG
         }));
         
         app.get('/', function(req, res){
@@ -167,7 +174,8 @@ describe('ipFilter()', function() {
         app.use(mashape.ipFilter({
             iplist: allowedIps,
             strict: false,
-            log: false
+            log: false,
+            debug: DEBUG
         }));
         
         app.get('/', function(req, res){
@@ -187,7 +195,8 @@ describe('ipFilter()', function() {
         app.use(mashape.ipFilter({
             iplist: allowedIps,
             strict: false,
-            log: false
+            log: false,
+            debug: DEBUG
         }));
         
         app.get('/', function(req, res){
@@ -207,7 +216,8 @@ describe('ipFilter()', function() {
         app.use(mashape.ipFilter({
             iplist: allowedIps,
             strict: false,
-            log: false
+            log: false,
+            debug: DEBUG
         }));
         
         app.get('/', function(req, res){
@@ -229,7 +239,8 @@ describe('headerFilter()', function() {
         app.use(mashape.headerFilter({
             proxySecret: 'test-secret',
             strict: false,
-            log: false
+            log: false,
+            debug: DEBUG
         }));
         
         app.get('/', function(req, res){
@@ -248,7 +259,8 @@ describe('headerFilter()', function() {
         app.use(mashape.headerFilter({
             proxySecret: 'test-secret',
             strict: false,
-            log: false
+            log: false,
+            debug: DEBUG
         }));
         
         app.get('/', function(req, res){
@@ -269,7 +281,8 @@ describe('headerFilter()', function() {
             proxySecret: 'test-secret',
             strict: false,
             log: false,
-            whitelist: ['10.2.2.2']
+            whitelist: ['10.2.2.2'],
+            debug: DEBUG
         }));
         
         app.get('/', function(req, res){
@@ -291,7 +304,8 @@ describe('headerFilter()', function() {
             log: false,
             additionalHeaderChecks: [
                 { name: 'x-test-header', value: 'exists' }
-            ]
+            ],
+            debug: DEBUG
         }));
         
         app.get('/', function(req, res){
@@ -312,7 +326,8 @@ describe('headerFilter()', function() {
             log: false,
             additionalHeaderChecks: [
                 { name: 'x-test-header', value: 'exists' }
-            ]
+            ],
+            debug: DEBUG
         }));
         
         app.get('/', function(req, res){
@@ -335,8 +350,9 @@ describe('headerFilter()', function() {
             log: false,
             whitelist: ['10.2.2.2'],
             additionalHeaderChecks: [
-                 { name: 'x-test-header', value: 'exists' }
-             ]
+                { name: 'x-test-header', value: 'exists' }
+            ],
+            debug: DEBUG
         }));
         
         app.get('/', function(req, res){
