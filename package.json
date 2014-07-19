@@ -41,5 +41,6 @@
     },
     "scripts":{
         "test":"grunt"
-    }
+    },
+    "readmeFilename":"README.md",
 }
