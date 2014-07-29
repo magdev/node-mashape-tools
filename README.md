@@ -3,6 +3,8 @@
 Connect-style middlewares to perform security checks on your Mashape-API backend by validating HTTP-Headers and allowed Proxy-IPs.
 
 [![Build Status](https://secure.travis-ci.org/magdev/node-mashape-tools.png?branch=master)](http://travis-ci.org/magdev/node-mashape-tools)
+[![dependencies](https://david-dm.org/magdev/node-mashape-tools.png)](https://david-dm.org/magdev/node-mashape-tools)
+[![NPM](https://nodei.co/npm/mashape-tools.png?downloads=true)](https://nodei.co/npm/mashape-tools/)
 
 
 ## Getting Started
