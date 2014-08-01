@@ -366,6 +366,44 @@ if (MASHAPE_KEY) {
                 .expect(200, done);
         });
         
+        
+        it('manual register and call magdev/GermanBanks (autodiscovery off)', function(done) {
+            var app = express();
+            
+            app.use(mashape.serviceContainer(app, {
+                strict: false,
+                log: false,
+                debug: DEBUG,
+                mashapeKey: MASHAPE_KEY
+            }));
+            
+            app.use(function(req, res, next) {
+                req.service.register('germanbanks', {
+                    url: {
+                        protocol: 'https:',
+                        hostname: 'german-banks.p.mashape.com'
+                    }
+                });
+                return next();
+            });
+            
+            app.get('/', function(req, res) {
+                if (!req.service) {
+                    return res.send(500);
+                }
+                req.service.call('germanbanks', 'get', '/', {}, function(result) {
+                    if (!result || result.code === 404) {
+                        return res.send(404);
+                    }
+                    return res.send(result.code);
+                });
+            });
+            
+            request(app)
+                .get('/')
+                .expect(200, done);
+        });
+        
         it('load (autodiscovery on)', function(done) {
             var app = express();
             
@@ -415,44 +453,6 @@ if (MASHAPE_KEY) {
                 }
                 
                 req.service.call('mashape', 'get', '/users/mashaper/apis/mashape', {}, function(result) {
-                    if (!result || result.code === 404) {
-                        return res.send(404);
-                    }
-                    return res.send(result.code);
-                });
-            });
-            
-            request(app)
-                .get('/')
-                .expect(200, done);
-        });
-        
-        
-        it('register and call magdev/GermanBanks (autodiscovery off)', function(done) {
-            var app = express();
-            
-            app.use(mashape.serviceContainer(app, {
-                strict: false,
-                log: false,
-                debug: DEBUG,
-                mashapeKey: MASHAPE_KEY
-            }));
-            
-            app.use(function(req, res, next) {
-                req.service.register('germanbanks', {
-                    url: {
-                        protocol: 'https:',
-                        hostname: 'german-banks.p.mashape.com'
-                    }
-                });
-                return next();
-            });
-            
-            app.get('/', function(req, res) {
-                if (!req.service) {
-                    return res.send(500);
-                }
-                req.service.call('germanbanks', 'get', '/', {}, function(result) {
                     if (!result || result.code === 404) {
                         return res.send(404);
                     }
