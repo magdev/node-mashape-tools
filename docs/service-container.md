@@ -1,11 +1,9 @@
-# node-mashape-tools 
-
-## Service Container
+# node-mashape-tools Service Container
 
 The service container provides an easy interface to call mashape APIs on the fly anywhere in your application.
 
 
-### Additional Configuration
+## Additional Configuration
 
 ```js
 var config = {
@@ -19,11 +17,11 @@ var config = {
 ```
 
 
-### API
+## API
 
 _(Coming soon)_
 
 
-### Testing
+## Testing
 
-_(Coming soon)_
+To test the Service-Container you have to set a valid Mashape-Key as environment variable MASHAPE_KEY.
