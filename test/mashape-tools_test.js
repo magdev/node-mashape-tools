@@ -428,7 +428,7 @@ if (MASHAPE_KEY) {
         });
         
         
-        it('register magdev/GermanBanks (autodiscovery off)', function(done) {
+        it('register and call magdev/GermanBanks (autodiscovery off)', function(done) {
             var app = express();
             
             app.use(mashape.serviceContainer(app, {
