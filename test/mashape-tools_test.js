@@ -464,5 +464,39 @@ if (MASHAPE_KEY) {
                 .get('/')
                 .expect(200, done);
         });
+        
+        
+        it('discover and call magdev/GermanBanks (autodiscovery on)', function(done) {
+            var app = express();
+            
+            app.use(mashape.serviceContainer({
+                strict: false,
+                log: false,
+                debug: DEBUG,
+                mashapeKey: MASHAPE_KEY,
+                autodiscovery: true
+            }));
+            
+            app.use(function(req, res, next) {
+                req.service.discover('magdev/GermanBanks');
+                return next();
+            });
+            
+            app.get('/', function(req, res) {
+                if (!req.service) {
+                    return res.send(500);
+                }
+                req.service.call('germanbanks', 'get', '/', {}, function(result) {
+                    if (!result || result.code === 404) {
+                        return res.send(404);
+                    }
+                    return res.send(result.code);
+                });
+            });
+            
+            request(app)
+                .get('/')
+                .expect(200, done);
+        });
     });
 }
