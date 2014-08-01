@@ -1,35 +1,35 @@
 'use strict';
 
 module.exports = function(grunt) {
-	// Show elapsed time at the end
-	require('time-grunt')(grunt);
-	// Load all grunt tasks
-	require('load-grunt-tasks')(grunt);
+    // Show elapsed time at the end
+    require('time-grunt')(grunt);
+    // Load all grunt tasks
+    require('load-grunt-tasks')(grunt);
 
-	// Project configuration.
-	grunt.initConfig({
-		jshint: {
-			options: {
-				jshintrc: '.jshintrc',
-				reporter: require('jshint-stylish')
-			},
-			gruntfile : {
-				src: 'Gruntfile.js'
-			},
-			lib: {
-				src: [ 'lib/**/*.js' ]
-			}
-		},
-		watch: {
-			gruntfile: {
-				files: '<%= jshint.gruntfile.src %>',
-				tasks: [ 'jshint:gruntfile' ]
-			},
-			lib: {
-				files: '<%= jshint.lib.src %>',
-				tasks: [ 'jshint:lib' ]
-			}
-		},
+    // Project configuration.
+    grunt.initConfig({
+        jshint: {
+            options: {
+                jshintrc: '.jshintrc',
+                reporter: require('jshint-stylish')
+            },
+            gruntfile : {
+                src: 'Gruntfile.js'
+            },
+            lib: {
+                src: [ 'lib/**/*.js' ]
+            }
+        },
+        watch: {
+            gruntfile: {
+                files: '<%= jshint.gruntfile.src %>',
+                tasks: [ 'jshint:gruntfile' ]
+            },
+            lib: {
+                files: '<%= jshint.lib.src %>',
+                tasks: [ 'jshint:lib' ]
+            }
+        },
         simplemocha: {
             options: {
                 globals: ['expect'],
@@ -42,10 +42,10 @@ module.exports = function(grunt) {
                 src: ['test/**/*_test.js'] 
             }
         }
-	});
-	
+    });
+    
     grunt.loadNpmTasks('grunt-simple-mocha');
 
-	// Default task.
-	grunt.registerTask('default', [ 'jshint', 'simplemocha' ]);
+    // Default task.
+    grunt.registerTask('default', [ 'jshint', 'simplemocha' ]);
 };
