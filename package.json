@@ -26,7 +26,8 @@
         "connect"
     ],
     "dependencies":{
-        "xtend":"*"
+        "xtend":"*",
+        "unirest":"*"
     },
     "devDependencies":{
         "grunt-contrib-jshint":"*",
