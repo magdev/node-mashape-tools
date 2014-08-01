@@ -3,6 +3,29 @@
 The service container provides an easy interface to call mashape APIs on the fly anywhere in your application.
 
 
+## Usage
+
+
+### Full Example
+
+```js
+app.use(mashape.serviceContainer({
+    mashapeKey: process.env.MASHAPE_KEY,
+    debug: false,
+    autodiscovery: true
+}));
+
+app.get('/', function(req, res) {
+    // The mashape service is auto-registered if autodiscovery is enabled
+    req.service.call('mashape', 'get', '/users/mashaper/apis/mashape', {}, function(result) {
+        console.log(result);
+    });
+});
+```
+
+A description of the configuration parameters can be found [here](configuration.md)
+
+
 ## API
 
 _(Coming soon)_
