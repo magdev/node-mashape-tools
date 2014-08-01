@@ -347,7 +347,7 @@ if (MASHAPE_KEY) {
         it('load (autodiscovery off)', function(done) {
             var app = express();
             
-            app.use(mashape.serviceContainer(app, {
+            app.use(mashape.serviceContainer({
                 strict: false,
                 log: false,
                 debug: DEBUG,
@@ -370,7 +370,7 @@ if (MASHAPE_KEY) {
         it('manual register and call magdev/GermanBanks (autodiscovery off)', function(done) {
             var app = express();
             
-            app.use(mashape.serviceContainer(app, {
+            app.use(mashape.serviceContainer({
                 strict: false,
                 log: false,
                 debug: DEBUG,
@@ -407,7 +407,7 @@ if (MASHAPE_KEY) {
         it('load (autodiscovery on)', function(done) {
             var app = express();
             
-            app.use(mashape.serviceContainer(app, {
+            app.use(mashape.serviceContainer({
                 strict: false,
                 log: false,
                 debug: DEBUG,
@@ -439,7 +439,7 @@ if (MASHAPE_KEY) {
         it('call mashape:/users/mashaper/apis/mashape (autodiscovery on)', function(done) {
             var app = express();
             
-            app.use(mashape.serviceContainer(app, {
+            app.use(mashape.serviceContainer({
                 strict: false,
                 log: false,
                 debug: DEBUG,
