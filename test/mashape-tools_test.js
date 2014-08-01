@@ -478,7 +478,12 @@ if (MASHAPE_KEY) {
             }));
             
             app.use(function(req, res, next) {
-                req.service.discover('magdev/GermanBanks', next);
+                req.service.discover('magdev/GermanBanks', function(e, container) {
+                    if (DEBUG) {
+                        console.log(container.services);
+                    }
+                    return next();
+                });
             });
             
             app.get('/', function(req, res) {
@@ -488,6 +493,9 @@ if (MASHAPE_KEY) {
                 req.service.call('germanbanks', 'get', '/', {}, function(result) {
                     if (!result || result.code === 404) {
                         return res.send(404);
+                    }
+                    if (DEBUG) {
+                        console.log(result.body);
                     }
                     return res.send(result.code);
                 });
