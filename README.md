@@ -1,6 +1,6 @@
 # Mashape-Tools
 
-Connect-style middlewares to perform security checks on your Mashape-API backend by validating HTTP-Headers and allowed Proxy-IPs.
+Connect-style middlewares to perform security checks on your Mashape-API backend by validating HTTP-Headers and allowed Proxy-IPs. It also provides a simple service-container for Mashape-APIs
 
 [![Build Status](https://secure.travis-ci.org/magdev/node-mashape-tools.png?branch=master)](http://travis-ci.org/magdev/node-mashape-tools)
 [![dependencies](https://david-dm.org/magdev/node-mashape-tools.png)](https://david-dm.org/magdev/node-mashape-tools)
