@@ -45,7 +45,7 @@ app.use(mashape.serviceContainer({
 
   * [Configuration](docs/configuration.md)
   * [Security Middlewares](docs/security-middlewares.md)
-  * [Service-Container Documentation](docs/service-container.md)
+  * [Service-Container](docs/service-container.md)
 
 
 ## Contributing
