@@ -1,20 +1,6 @@
-# node-mashape-tools Service Container
+# Mashape-Tools Service Container
 
 The service container provides an easy interface to call mashape APIs on the fly anywhere in your application.
-
-
-## Additional Configuration
-
-```js
-var config = {
-    // Your Mashape-Key, needed to perform autodiscovery calls
-    mashapeKey: 'YourMashapeKey',
-    
-    // Enable auto-discovery of APIs
-    autodiscovery: true
-};
-
-```
 
 
 ## API
