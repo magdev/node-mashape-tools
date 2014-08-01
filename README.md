@@ -32,6 +32,11 @@ app.use(mashape.headerFilter({
     ]
 }));
 
+// Use the Service Container
+app.use(mashape.serviceContainer(app, {
+    mashapeKey: process.env.MASHAPE_KEY,
+    autodiscovery: true
+}));
 // ...
 ```
 
@@ -62,7 +67,7 @@ var config = {
     // Enable logging
     log: true,
         
-    /** Enable debug-mode */
+    // Enable debug-mode 
     debug: false,
     
     // List of additional header-checks
@@ -70,25 +75,35 @@ var config = {
         { header: 'x-your-header', value: 'your-expected-value' }
     ],
     
-    /** List of allowed IPs, i.e. load balancers, applies on all middlewares */
+    // List of allowed IPs, i.e. load balancers, applies on all middlewares 
     whitelist: []
 };
 ```
 
-### IP-Filter middleware
+
+### Security 
+
+#### IP-Filter middleware
 
 _(Coming soon)_
 
 
-### HTTP-Header-Filter middleware
+#### HTTP-Header-Filter middleware
 
 _(Coming soon)_
+
+
+### Service Container
+
+The service container provides an easy interface to call mashape APIs on the fly anywhere in your application. 
+
+For further information and usage read the [Service-Container Documentation](docs/service-container.md).
 
 
 
 ## Contributing
 
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com).
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com).
 
 
 ## License
