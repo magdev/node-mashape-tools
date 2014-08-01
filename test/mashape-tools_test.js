@@ -478,8 +478,7 @@ if (MASHAPE_KEY) {
             }));
             
             app.use(function(req, res, next) {
-                req.service.discover('magdev/GermanBanks');
-                return next();
+                req.service.discover('magdev/GermanBanks', next);
             });
             
             app.get('/', function(req, res) {
