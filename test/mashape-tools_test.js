@@ -351,7 +351,7 @@ if (MASHAPE_KEY) {
                 strict: false,
                 log: false,
                 debug: DEBUG,
-                mashapeKey: 'pQO0EFergZmshSNOBZnjwNpAb9XUp1OAtjQjsnzuTAaWNhGcUA'
+                mashapeKey: MASHAPE_KEY
             }));
             
             app.get('/', function(req, res) {
@@ -405,7 +405,7 @@ if (MASHAPE_KEY) {
                 strict: false,
                 log: false,
                 debug: DEBUG,
-                mashapeKey: 'pQO0EFergZmshSNOBZnjwNpAb9XUp1OAtjQjsnzuTAaWNhGcUA',
+                mashapeKey: MASHAPE_KEY,
                 autodiscovery: true
             }));
             
