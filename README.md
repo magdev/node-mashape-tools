@@ -35,8 +35,7 @@ app.use(mashape.headerFilter({
 
 // Use the Service Container
 app.use(mashape.serviceContainer({
-    mashapeKey: process.env.MASHAPE_KEY,
-    autodiscovery: true
+    mashapeKey: process.env.MASHAPE_KEY
 }));
 // ...
 ```

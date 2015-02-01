@@ -34,9 +34,6 @@ var config = {
     whitelist: [],
     
     // Your Mashape-Key, needed to perform autodiscovery calls (only for service-container)
-    mashapeKey: 'YourMashapeKey',
-    
-    // Enable auto-discovery of APIs (only for service-container)
-    autodiscovery: true
+    mashapeKey: 'YourMashapeKey'
 };
 ```
