@@ -1,6 +1,6 @@
 {
     "name":"mashape-tools",
-    "version":"0.0.13",
+    "version":"0.0.14",
     "main":"lib/mashape-tools.js",
     "description":"Connect-style middlewares to perform security checks on your Mashape-API backend by validating HTTP-Headers and allowed Proxy-IPs. It also provides a simple service-container for Mashape-APIs",
     "homepage":"https://github.com/magdev/node-mashape-tools",
