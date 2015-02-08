@@ -12,7 +12,7 @@ var request = require('supertest'),
     express = require('express'),
     mashape = require('../'),
     
-    DEBUG = true,
+    DEBUG = false,
     
     allowedIps = [
         '107.23.255.128'
