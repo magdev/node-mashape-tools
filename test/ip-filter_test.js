@@ -12,7 +12,7 @@ var request = require('supertest'),
     express = require('express'),
     mashape = require('../'),
     
-    DEBUG = false,
+    DEBUG = true,
     
     allowedIps = [
         '107.23.255.128'
@@ -27,7 +27,7 @@ describe('ipFilter()', function() {
         var app = express();
         
         app.use(mashape.ipFilter({
-            iplist: ['127.0.0.1'],
+            iplist: ['127.0.0.1', '::ffff:127.0.0.1'],
             strict: false,
             log: false,
             debug: DEBUG
